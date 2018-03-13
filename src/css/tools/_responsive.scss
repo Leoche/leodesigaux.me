@@ -1,0 +1,15 @@
+$small: 400px !default;
+$medium: $tablet !default;
+$large: $desktop !default;
+$full: $widescreen !default;
+
+$menu-width: 227px !default;
+
+$small-up: "only screen and (min-width: #{$small})" !default;
+$small-down: "only screen and (max-width: #{$small - 1})" !default;
+$medium-up: "only screen and (min-width: #{$medium})" !default;
+$medium-down: "only screen and (max-width: #{$medium - 1})" !default;
+$large-up: "only screen and (min-width: #{$large})" !default;
+$large-down: "only screen and (max-width: #{$large - 1})" !default;
+$full-up: "only screen and (min-width: #{$full})" !default;
+$full-down: "only screen and (max-width: #{$full - 1})" !default;

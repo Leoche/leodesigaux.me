@@ -1,0 +1,60 @@
+@include font-face("ld", "./fonts/ld", 400, null, eot)
+@include font-face("ld", "./fonts/ld", 400, null, ttf)
+@include font-face("ld", "./fonts/ld", 400, null, woff)
+@include font-face("ld", "./fonts/ld", 400, null, svg)
+
+i.ld {
+  font-family: 'ld' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ld-twitter:before {
+  content: "\f099";
+}
+.ld-github:before {
+  content: "\f09b";
+}
+.ld-soundcloud:before {
+  content: "\f1be";
+}
+.ld-send:before {
+  content: "\f1d8";
+}
+.ld-at:before {
+  content: "\e91c";
+}
+.ld-bookmark:before {
+  content: "\e901";
+}
+.ld-codepen:before {
+  content: "\e943";
+}
+.ld-lock:before {
+  content: "\e902";
+}
+.ld-monitor:before {
+  content: "\e999";
+}
+.ld-package:before {
+  content: "\e9a2";
+}
+.ld-phone-call:before {
+  content: "\e9a8";
+}
+.ld-server:before {
+  content: "\e903";
+}
+.ld-smartphone:before {
+  content: "\e9d1";
+}
+.ld-truck:before {
+  content: "\e904";
+}

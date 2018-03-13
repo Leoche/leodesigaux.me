@@ -1,0 +1,60 @@
+@import "./node_modules/bulma/sass/utilities/initial-variables";
+@import "./node_modules/bulma/sass/utilities/functions";
+
+/* Variables
+   ========================================================================== */
+$color: #000;
+$color-soundcloud: #ff3300;
+$color-twitter: #1da1f2;
+$color-github: #333;
+$fullhd: 960px;
+$ld-black: #262424;
+$ld-gray: #67666C;
+$ld-lightgray: #919191;
+$ld-light: #a1a1a1;
+$ld-darkblue: #28283C;
+$ld-blue: #037ED5;
+$ld-gradient: linear-gradient(150deg, #0092e8 0%,#1c1f7b 80%);
+$footer-background-color: #FFF;
+
+/* MISC
+   ========================================================================== */
+@import "tools/helpers";
+@import "tools/responsive";
+
+
+/* Generic & Fonts
+   ========================================================================== */
+body {
+    font-size: 16px;
+    color: inherit;
+    background: #FFF;
+    font-family: "Lato";
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900");
+
+@include font-face("Nexa", "./fonts/nexa_light-webfont", 300, null, woff)
+@include font-face("Nexa", "./fonts/nexa_light-webfont", 300, null, woff2)
+
+@include font-face("Nexa", "./fonts/nexa_bold-webfont", 600, null, woff)
+@include font-face("Nexa", "./fonts/nexa_bold-webfont", 600, null, woff2)
+
+
+/* Tools
+   ========================================================================== */
+@import "tools/layout";
+@import "tools/ld-icons";
+
+/* Modules
+   ========================================================================== */
+@import "modules/footer";
+@import "modules/landing";
+@import "modules/laptop";
+@import "modules/logo";
+@import "modules/navbar";
+
+/* Pages
+   ========================================================================== */
+
+@import "./node_modules/bulma/bulma";

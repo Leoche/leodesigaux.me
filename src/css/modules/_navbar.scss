@@ -1,0 +1,70 @@
+.navbar {
+    background-color: transparent !important;
+
+    .navbar-burger span {
+        background: white;
+        height: 2px;
+        border-radius: 2px;
+    }
+
+    a.navbar-item {
+        img {
+            margin-top: 10px;
+        }
+
+        &:hover {
+            background-color: transparent !important;
+
+            & span {
+                color: #FFF;
+                opacity: 1;
+
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+
+        & span {
+            color: #FFF;
+            position: relative;
+            opacity: .8;
+            transition: opacity .2s;
+
+            &:after {
+                content: "";
+                display: block;
+                height: 1px;
+                width: 0%;
+                transition: width .2s;
+                background: #CCC;
+                margin-top: 3px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &.is-dark {
+        .navbar-burger span {
+            background: white;
+            height: 2px;
+            border-radius: 2px;
+        }
+
+        a.navbar-item {
+            & span {
+                color: #111;
+
+                &:after {
+                    background: #333;
+                }
+
+                &:hover {
+                    color: #111;
+                }
+            }
+        }
+    }
+}
