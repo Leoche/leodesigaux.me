@@ -1,6 +1,7 @@
 footer {
     border-top: 1px solid $grey-lighter;
     padding-top: 32px !important;
+    margin-top: 32px !important;
 
     @media #{$medium-down} {
         padding-bottom: 64px !important;

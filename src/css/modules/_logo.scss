@@ -24,3 +24,13 @@
         }
     }
 }
+
+.navbar.is-transparent .navbar-brand a.navbar-item {
+    & #logo {
+        background-position: 0 0;
+
+        &.is-text {
+            background-position: -67px 0;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 .navbar {
-    background-color: transparent !important;
+    background-color: white !important;
+    margin-bottom: 16px;
 
     .navbar-burger span {
         background: white;
@@ -16,7 +17,7 @@
             background-color: transparent !important;
 
             & span {
-                color: #FFF;
+                color: #111;
                 opacity: 1;
 
                 &:after {
@@ -26,7 +27,7 @@
         }
 
         & span {
-            color: #FFF;
+            color: #333;
             position: relative;
             opacity: .8;
             transition: opacity .2s;
@@ -37,7 +38,7 @@
                 height: 1px;
                 width: 0%;
                 transition: width .2s;
-                background: #CCC;
+                background: #333;
                 margin-top: 3px;
                 position: absolute;
                 left: 0;
@@ -46,7 +47,9 @@
         }
     }
 
-    &.is-dark {
+    &.is-transparent {
+        background-color: transparent !important;
+
         .navbar-burger span {
             background: white;
             height: 2px;
@@ -55,14 +58,14 @@
 
         a.navbar-item {
             & span {
-                color: #111;
+                color: #fff;
 
                 &:after {
-                    background: #333;
+                    background: #ccc;
                 }
 
                 &:hover {
-                    color: #111;
+                    color: #fff;
                 }
             }
         }
