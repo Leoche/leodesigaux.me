@@ -4,3 +4,5 @@ dist
 public
 .idea
 npm-debug*
+.directory
+*.sublime*
