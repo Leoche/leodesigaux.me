@@ -6,9 +6,11 @@ function init () {
   if (!Detector.webgl) {
     Detector.addGetWebGLMessage()
   } else {
-    const container = document.querySelector('.landing--3d')
-    let hero = new Hero(container)
-    hero.render()
+    if (document.querySelector('.landing--3d') !== null) {
+      const container = document.querySelector('.landing--3d')
+      let hero = new Hero(container)
+      hero.render()
+    }
   }
 }
 window.onload = () => {
