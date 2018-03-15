@@ -118,6 +118,9 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({inject: true, template: 'src/html/index.html'}),
+    new HtmlWebpackPlugin({filename: 'blog.html', inject: true, template: 'src/html/blog.html'}),
+    new HtmlWebpackPlugin({filename: 'labs.html', inject: true, template: 'src/html/labs.html'}),
+    new HtmlWebpackPlugin({filename: 'contact.html', inject: true, template: 'src/html/contact.html'}),
     new HtmlWebpackPlugin({filename: 'realisations.html', inject: true, template: 'src/html/realisations.html'}),
     extractCSS
   ]
