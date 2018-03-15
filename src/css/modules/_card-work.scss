@@ -1,11 +1,11 @@
 .card.card-work {
     box-shadow: none;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
 
     &:hover {
         & figure.image {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px gray;
         }
     }
 
@@ -13,6 +13,8 @@
         border-radius: 10px;
         overflow: hidden;
         transition: transform .2s, box-shadow .2s;
+        transform: translateY(0px);
+        box-shadow: 0 3px 10px gray;
     }
 
     & .card-content {
@@ -32,6 +34,12 @@
                     font-size: 24px;
                     color: $ld-light;
                     margin-top: 5px;
+                }
+            }
+
+            @media #{$large-down} {
+                .level-right {
+                    visibility: hidden;
                 }
             }
         }
@@ -59,6 +67,20 @@
         .level-left {
             font-weight: bold;
             font-size: 14px;
+
+            a {
+                & i {
+                    display: inline-block;
+                    transform: translate(0, 1px);
+                    transition: .3s transform;
+                }
+
+                &:hover {
+                    & i {
+                        transform: translate(3px, 1px);
+                    }
+                }
+            }
         }
 
         .level-right {
