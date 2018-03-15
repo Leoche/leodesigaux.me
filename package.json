@@ -12,6 +12,7 @@
   "dependencies": {
     "basicscroll": "^2.0.0",
     "bulma": "^0.6.2",
+    "html-loader": "^0.5.5",
     "three": "^0.90.0",
     "url-loader": "^1.0.1"
   },

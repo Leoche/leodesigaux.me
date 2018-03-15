@@ -46,8 +46,10 @@
             }
         }
     }
+}
 
-    &.is-transparent {
+.is-transparent {
+    .navbar {
         background-color: transparent !important;
 
         .navbar-burger span {

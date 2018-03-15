@@ -7,9 +7,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const ImageminPlugin = require('imagemin-webpack-plugin').default
 const ManifestPlugin = require('webpack-manifest-plugin')
-const imageminMozjpeg = require('imagemin-mozjpeg')
 const extractCSS = new ExtractTextPlugin({
   filename: 'main.css',
   disable: dev
@@ -47,7 +45,7 @@ const config = {
     publicPath: dev ? `http://localhost:8080/` : '/'
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.ts', '.tsx','.png'],
+    extensions: ['.jsx', '.js', '.ts', '.tsx'],
     alias: {
       '~': path.resolve('node_modules'),
       '@': path.resolve('src')
@@ -89,7 +87,7 @@ const config = {
               options: {
                 sourceMap: dev
               }
-            },
+            }
           ]
         })
       },
@@ -102,13 +100,27 @@ const config = {
             useRelativePath: !dev
           }
         }]
+      },
+      {
+        test: /\.html$/,
+        use: [ {
+          loader: 'html-loader',
+          options: {
+            minimize: false,
+            removeComments: false,
+            interpolate: true,
+            collapseWhitespace: false
+          }
+        }
+        ]
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({inject: true, template: 'index.html'}),
+    new HtmlWebpackPlugin({inject: true, template: 'src/html/index.html'}),
     new HtmlWebpackPlugin({filename: 'contact.html', inject: true, template: 'contact.html'}),
     new HtmlWebpackPlugin({filename: 'testing.html', inject: true, template: 'testing.html'}),
+    new HtmlWebpackPlugin({filename: 'realisations.html', inject: true, template: 'src/html/realisations.html'}),
     extractCSS
   ]
 }
