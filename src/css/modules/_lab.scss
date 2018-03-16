@@ -1,0 +1,32 @@
+.is-lab {
+    pre, code {
+        background: none;
+        padding: 0;
+    }
+
+    td.hljs-ln-numbers {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #ccc;
+        vertical-align: top;
+        padding-right: 5px;
+
+        /* your custom style here */
+    }
+
+    td.hljs-ln-code {
+        padding-left: 10px;
+    }
+
+    .frame {
+        width: 100%;
+        min-height: 300px;
+        border-radius: 15px;
+        background: #556;
+        box-shadow: 0 15px 45px gray;
+    }
+}
