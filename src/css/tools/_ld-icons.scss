@@ -16,6 +16,15 @@ i.ld {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ld-droplet:before {
+  content: "\e908";
+}
+.ld-layout:before {
+  content: "\e909";
+}
+.ld-settings:before {
+  content: "\e90a";
+}
 .ld-arrow-right:before {
   content: "\e900";
 }
