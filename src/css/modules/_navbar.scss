@@ -17,11 +17,12 @@
             background-color: transparent !important;
 
             & span {
-                color: #111;
+                color: $ld-blue;
                 opacity: 1;
 
                 &:after {
                     width: 100%;
+                    background: $ld-blue;
                 }
             }
         }
@@ -30,14 +31,14 @@
             color: #333;
             position: relative;
             opacity: .8;
-            transition: opacity .2s;
+            transition: all .2s;
 
             &:after {
                 content: "";
                 display: block;
                 height: 1px;
                 width: 0%;
-                transition: width .2s;
+                transition: all .2s;
                 background: #333;
                 margin-top: 3px;
                 position: absolute;
