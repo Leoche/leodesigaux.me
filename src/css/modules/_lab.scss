@@ -1,4 +1,94 @@
 .is-lab {
+    .is-nav {
+        margin-bottom: 36px !important;
+
+        .column {
+            align-self: flex-end;
+
+            &:last-child {
+                line-height: 33px;
+            }
+        }
+    }
+
+    .ld-server {
+        font-size: 24px;
+    }
+
+    .ld-layout-toggle {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        display: inline-block;
+        margin-left: 4px;
+        transform: translateY(3px);
+        cursor: pointer;
+
+        &:hover {
+            &:after, &:before {
+                box-shadow: inset 0 0 0 2px $ld-gray;
+            }
+        }
+
+        &:active, &.is-active {
+            &:after, &:before {
+                box-shadow: inset 0 0 0 6px $ld-black;
+            }
+        }
+
+        &:after, &:before {
+            content: "";
+            display: block;
+            width: 16px;
+            box-shadow: inset 0 0 0 2px #ccc;
+            transition: .2s box-shadow;
+            height: 7px;
+            border-radius: 2px;
+            position: absolute;
+        }
+
+        &.ld-layout-v {
+            &:after, &:before {
+                width: 7px;
+                height: 16px;
+            }
+        }
+
+        &:after {
+            top: 0;
+            left: 0;
+        }
+
+        &:before {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .content {
+        margin-bottom: 0 !important;
+
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+
+    .columns.is-vertical {
+        flex-direction: column;
+    }
+
+    a:hover .ld-arrow-left:before {
+        transform: translate(-3px, 1px);
+    }
+
+    .ld-arrow-left:before {
+        transition: .3s transform;
+    }
+
+    .ld-external-link {
+        margin-left: 4px;
+    }
+
     pre, code {
         background: none;
         padding: 0;
@@ -22,11 +112,24 @@
         padding-left: 10px;
     }
 
+    .has-icon {
+        padding-right: 1em !important;
+        padding-left: 0.75em !important;
+        margin-left: 0.75em;
+        color: #222;
+
+        .ld-github {
+            font-size: 24px;
+            margin-left: 0;
+            margin-right: 8px;
+        }
+    }
+
     .frame {
         width: 100%;
         min-height: 300px;
         border-radius: 15px;
-        background: #556;
-        box-shadow: 0 15px 45px gray;
+        background: #ddd;
+        box-shadow: 0 3px 10px gray;
     }
 }
