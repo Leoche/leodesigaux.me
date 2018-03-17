@@ -4,6 +4,12 @@
     }
 }
 
+@media #{$small-down} {
+    .has-text-centered-mobile {
+        text-align: center;
+    }
+}
+
 .spacer {
     width: 100%;
     height: 16px;
