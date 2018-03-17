@@ -15,39 +15,28 @@ i.ld {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.ld-arrow-left:before, .ld-chevrons-right:before{
+  display: inline-block;
+  transform: translate(0, 1px);
+}
+.ld-arrow-left:before {
+  content: "\e900";
+  line-height: 1px;
+}
+.ld-chevrons-right:before {
+  content: "\e906";
+}
 .ld-droplet:before {
   content: "\e908";
+}
+.ld-external-link:before {
+  content: "\e905";
 }
 .ld-layout:before {
   content: "\e909";
 }
 .ld-settings:before {
   content: "\e90a";
-}
-.ld-arrow-right:before {
-  content: "\e900";
-}
-.ld-chevron-right:before {
-  content: "\e905";
-}
-.ld-chevrons-right:before {
-  content: "\e906";
-}
-.ld-forward:before {
-  content: "\e907";
-}
-.ld-twitter:before {
-  content: "\f099";
-}
-.ld-github:before {
-  content: "\f09b";
-}
-.ld-soundcloud:before {
-  content: "\f1be";
-}
-.ld-send:before {
-  content: "\f1d8";
 }
 .ld-at:before {
   content: "\e91c";
@@ -78,4 +67,19 @@ i.ld {
 }
 .ld-truck:before {
   content: "\e904";
+}
+.ld-forward:before {
+  content: "\e907";
+}
+.ld-twitter:before {
+  content: "\f099";
+}
+.ld-github:before {
+  content: "\f09b";
+}
+.ld-soundcloud:before {
+  content: "\f1be";
+}
+.ld-send:before {
+  content: "\f1d8";
 }
