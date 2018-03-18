@@ -65,13 +65,12 @@
             a {
                 & i {
                     display: inline-block;
-                    transform: translate(0, 1px);
                     transition: .3s transform;
                 }
 
                 &:hover {
                     & i {
-                        transform: translate(3px, 1px);
+                        transform: translateX(3px);
                     }
                 }
             }
