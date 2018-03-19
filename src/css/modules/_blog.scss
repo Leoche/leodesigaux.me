@@ -1,0 +1,86 @@
+.blog-list {
+    article {
+        &:hover .date {
+            width: 100px;
+        }
+
+        figure {
+            border-radius: 1em;
+            overflow: hidden;
+
+            .date {
+                transition: width .2s;
+                width: 92px;
+                height: 72px;
+                position: absolute;
+                color: $ld-black;
+                border-radius: .5em 0 0 .5em;
+                top: 28px;
+                right: 0;
+                background: white;
+                display: flex;
+                align-items: center;
+
+                & span {
+                    font-size: 64px;
+                    font-family: "Nexa";
+                    font-weight: 300;
+                    line-height: 61px;
+                    margin-left: 8px;
+                    height: 61px;
+                    margin-top: 5px;
+                    position: relative;
+
+                    & i {
+                        font-family: "Nexa";
+                        font-weight: 600;
+                        position: absolute;
+                        font-size: 20px;
+                        right: 0;
+                        bottom: 5px;
+                        font-style: normal;
+                        text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+                        color: $ld-blue;
+                        padding: 0;
+                        line-height: 20px;
+                    }
+                }
+
+                &:after, &:before {
+                    content: "";
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    box-shadow: 0 5px 0 0 white;
+                    position: absolute;
+                    right: 0px;
+                    top: -16px;
+                    transform: rotate(-45deg);
+                }
+
+                &:before {
+                    transform: rotate(-135deg);
+                    top: auto;
+                    bottom: -16px;
+                }
+            }
+        }
+
+        a.readme {
+            font-weight: bold;
+            font-size: 14px;
+
+            & i {
+                display: inline-block;
+                transition: .3s transform;
+            }
+
+            &:hover {
+                & i {
+                    transform: translateX(3px);
+                }
+            }
+        }
+    }
+}
