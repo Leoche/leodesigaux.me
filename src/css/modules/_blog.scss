@@ -2,6 +2,7 @@
     article {
         &:hover .date {
             width: 100px;
+            padding-right: 8px;
         }
 
         figure {
@@ -9,7 +10,7 @@
             overflow: hidden;
 
             .date {
-                transition: width .2s;
+                transition: all 0.2s $easeOutBack;
                 width: 92px;
                 height: 72px;
                 position: absolute;
@@ -19,6 +20,7 @@
                 right: 0;
                 background: white;
                 display: flex;
+                justify-content: flex-end;
                 align-items: center;
 
                 & span {
@@ -67,6 +69,69 @@
             }
         }
 
+        @media #{$medium-down} {
+            .media-left.is-figure {
+                position: absolute;
+                right: 0;
+                top: 0;
+                border-radius: 5px;
+                margin-right: 0;
+
+                & figure {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 5px;
+
+                    img {
+                        width: 64px;
+                        height: 64px;
+                    }
+                }
+
+                & .date {
+                    display: none;
+                }
+            }
+
+            h2 {
+                margin-right: 72px !important;
+            }
+        }
+
+        @media #{$small-down} {
+            .media-left.is-figure {
+                display: none;
+            }
+
+            h2 {
+                margin-right: 0 !important;
+            }
+        }
+
+        .level.blog-title {
+            margin-bottom: 1em;
+
+            .level-left {
+                align-items: flex-end;
+
+                h2 {
+                    color: $ld-black;
+                    margin-bottom: 0;
+                    margin-right: 8px;
+                }
+
+                small {
+                    color: $ld-gray;
+                }
+            }
+
+            @media #{$medium-down} {
+                .level-right {
+                    margin-top: .5em;
+                }
+            }
+        }
+
         a.readme {
             font-weight: bold;
             font-size: 14px;
@@ -80,6 +145,39 @@
                 & i {
                     transform: translateX(3px);
                 }
+            }
+        }
+    }
+}
+
+@media #{$medium-down} {
+    .media {
+        position: relative;
+    }
+}
+
+.blog-post {
+    figure.is-thumb {
+        width: 256px;
+        height: 256px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 1em;
+    }
+
+    h1 {
+        color: $ld-black !important;
+    }
+
+    .is-tags {
+        display: flex;
+        justify-content: center;
+
+        .tag {
+            margin-right: 8px;
+
+            &:last-child {
+                margin-right: 0;
             }
         }
     }
