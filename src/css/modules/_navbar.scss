@@ -38,7 +38,7 @@
                 display: block;
                 height: 1px;
                 width: 0%;
-                transition: all .2s;
+                transition: all 0.2s $easeInQuart;
                 background: #333;
                 margin-top: 3px;
                 position: absolute;
