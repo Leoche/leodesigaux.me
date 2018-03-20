@@ -15,6 +15,18 @@ i.ld {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+i.ld.ld-md{
+  font-size:1.3em;
+}
+i.ld.ld-lg{
+  font-size:1.5em;
+}
+.ld-at-sign:before {
+  content: "\e907";
+}
+.ld-user:before {
+  content: "\e90b";
+}
 .ld-arrow-left:before, .ld-chevrons-right:before{
   display: inline-block;
   transform: translate(0, 1px);
