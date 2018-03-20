@@ -4,8 +4,23 @@
     --laptop-percent: 0;
 }
 
+@media #{$large-up} {
+    .hero.is-laptop {
+        margin-bottom: 92px;
+    }
+}
+
+@media #{$large-down} {
+    .hero.is-laptop {
+        .container {
+            width: auto;
+            max-width: 1000px;
+        }
+    }
+}
+
 .hero.is-laptop {
-    padding-bottom: 128px;
+    padding-bottom: 64px;
 
     & .column.is-content {
         .title {
@@ -71,7 +86,7 @@
             background: url("../img/laptop.png") -781px 0 no-repeat;
 
             @media #{$full-up} {
-                top: 48px;
+                top: 0px;
             }
 
             &:before {
