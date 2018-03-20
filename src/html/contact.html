@@ -4,51 +4,62 @@ ${require('./components/navbar.html')}
   <div class="columns">
     <div class="column is-half">
       <div class="content">
-        <h1>Contact</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt necessitatibus recusandae voluptatum.</p>
-        <form action="#">
-          <div class="field">
-            <label class="label">Name</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="e.g Alex Smith">
-            </div>
-          </div>
+        <div class="card-contact">
+          <div class="card-symbols"></div>
+          <div class="card-front">
+            <h1>Contact</h1>
+            <p class="has-text-grey">Une idée, un projet ou une demande d'informations.<br/>Gardons contact! :)</p>
+            <form action="#">
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="text" placeholder="Nom est prénom...">
+                  <span class="icon is-medium is-left">
+                    <i class="ld ld-user ld-md"></i>
+                  </span>
+                </p>
+              </div>
 
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-              <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-            </div>
-          </div>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="email" placeholder="Email...">
+                  <span class="icon is-medium is-left">
+                    <i class="ld ld-at ld-md"></i>
+                  </span>
+                </p>
+              </div>
 
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
-            </div>
+              <div class="field">
+                <div class="control">
+                  <textarea class="textarea" placeholder="Comment puis-je vous aider?"></textarea>
+                </div>
+              </div>
+              <div class="field is-grouped is-grouped-right">
+                <div class="control">
+                  <button class="button is-white">Effacer</button>
+                  <button class="button is-info">Envoyer</button>
+                </div>
+              </div>
+            </form>
           </div>
-
-          <div class="control">
-            <button class="button is-info">Submit</button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
-    <div class="column content">
-      <div class="title">Localisation</div>
-      <p>
-        37000 Tours, FRANCE
-      </p>
-      <div class="title">Email</div>
-      <p>
-        leodesigaux@gmail.com
-      </p>
-      <div class="title">Telephone</div>
-      <p>
-        +33650102564
-      </p>
+    <div class="column content is-personal-informations">
+      <h2><span>Coordonnées</span></h2>
+      <div class="info-table">
+        <div class="info-th">Email</div>
+        <div class="info-tr">leodesigaux@gmail.com</div>
+      </div>
+      <div class="info-table">
+        <div class="info-th">Téléphone</div>
+        <div class="info-tr">+33650102564</div>
+      </div>
+      <div class="info-table">
+        <div class="info-th">Adresse</div>
+        <div class="info-tr">Tours, 37000<br/>Région Centre, FRANCE</div>
+      </div>
       <div class="google-maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+        <iframe src="https://snazzymaps.com/embed/53429" width="600" height="450" frameborder="0" style="border:none;"></iframe>
       </div>
     </div>
   </div>
