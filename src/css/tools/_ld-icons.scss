@@ -15,11 +15,19 @@ i.ld {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 i.ld.ld-md{
   font-size:1.3em;
 }
 i.ld.ld-lg{
   font-size:1.5em;
+}
+
+.ld-tag_faces:before {
+  content: "\e90d";
+}
+.ld-filter:before {
+  content: "\e90e";
 }
 .ld-at-sign:before {
   content: "\e907";
