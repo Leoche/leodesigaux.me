@@ -12,9 +12,24 @@
 
 @media #{$large-down} {
     .hero.is-laptop {
+        & > .container > .columns {
+            flex-direction: column;
+        }
+
         .container {
             width: auto;
-            max-width: 1000px;
+            max-width: 600px;
+        }
+
+        & .laptop-container {
+            position: relative;
+            width: 655px;
+            height: 527px;
+
+            & .laptop {
+                left: -50px;
+                perspective-origin: 50% var(--laptop-origin);
+            }
         }
     }
 }
