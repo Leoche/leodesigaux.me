@@ -1,11 +1,12 @@
 // Variables
-const outputPath = '../public/assets'
+const outputPath = '../public'
 const assetPath = './src'
 const dev = process.env.NODE_ENV !== 'production'
 
 // Dependencies
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const ManifestPlugin = require('webpack-manifest-plugin')
 const extractCSS = new ExtractTextPlugin({
@@ -96,7 +97,7 @@ const config = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: `[name]${dev ? '' : '.[hash]'}.[ext]`,
+            name: `[name].[ext]`,
             useRelativePath: !dev
           }
         }]
@@ -124,7 +125,11 @@ const config = {
     new HtmlWebpackPlugin({filename: 'post.html', inject: true, template: 'src/html/post.html'}),
     new HtmlWebpackPlugin({filename: 'lab.html', inject: true, template: 'src/html/lab.html'}),
     new HtmlWebpackPlugin({filename: 'realisations.html', inject: true, template: 'src/html/realisations.html'}),
-    extractCSS
+    extractCSS,
+    new CopyWebpackPlugin([
+      { from: 'favicon.ico', to: outputPath },
+      { from: 'favicon.png', to: outputPath }
+    ])
   ]
 }
 

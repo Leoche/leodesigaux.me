@@ -12,6 +12,23 @@ function init () {
       hero.render()
     }
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+          var targetbrand = $el.dataset.targetbrand
+          var target = $el.dataset.target
+          var $target = document.getElementById(target)
+          var $targetbrand = document.getElementById(targetbrand)
+          $el.classList.toggle('is-active')
+          $target.classList.toggle('is-active')
+          $targetbrand.classList.toggle('is-active')
+        })
+      })
+    }
+  })
 }
 window.onload = () => {
   init()
