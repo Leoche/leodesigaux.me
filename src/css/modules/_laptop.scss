@@ -31,6 +31,14 @@
                 perspective-origin: 50% var(--laptop-origin);
             }
         }
+
+        & .column.is-content {
+            .title {
+                h3, p {
+                    text-align: center;
+                }
+            }
+        }
     }
 }
 
@@ -148,8 +156,8 @@
                 box-shadow: inset 0 10px 0 20px #111,  inset 0 -15px 0 5px #050607;
                 position: absolute;
                 transform-style: preserve-3d;
-                background: red;
-                background-size: cover;
+                background: url(../img/webexample.png) center center;
+                background-size: 522px 334px;
             }
 
             & .laptop--screen:after {

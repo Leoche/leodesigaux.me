@@ -1,154 +1,193 @@
 .landing {
-  width: 100%;
-  height: 90vh;
-
-  &.landing--back {
-    background: $ld-gradient;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    min-height:600px;
-  }
-
-  &.landing--front {
-    position: relative;
-    z-index: 0;
-    min-height:600px;
-    max-height:900px;
-
-    & .landing--middle {
-      color: white;
-
-      & h4 {
-        font-family: "Nexa";
-        font-size: 48px;
-        opacity::.8;
-        font-weight: 300;
-        line-height: 40px;
-        margin-top: 133px;
-
-      }
-      @media #{$small-down} {
-
-        & h4 {
-          margin-top: 93px;
-        }
-      }
-
-      & h1 {
-        font-family: "Nexa";
-        font-size: 60px;
-        line-height: 80px;
-        font-weight: 600;
-      }
-
-      & p {
-        font-family: "Lato";
-        font-size: 21px;
-        margin-bottom:40px;
-
-        @media #{$medium-down} {
-          &.buttons{
-            display: flex;
-            justify-content: center;
-          }
-        }
-      }
-      & .button{
-        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
-        transition: all .2s;
-        &:hover{
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        &:active{
-          transform: translateY(-1px);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        &.is-success{
-          padding-top: calc(0.175em - 1px);
-          background: linear-gradient(43deg, #0AA655 0%, #11CC6B 100%) !important;
-          & i{
-            font-size::24px;
-            margin-left:16px;
-          }
-        }
-
-        &.has-icon{
-          padding-right: 0.75em;
-          padding-left: 0.75em;
-          margin-left: 0.75em;
-          color:#222;
-          background: linear-gradient(0deg, #DDD 0%, #FFF 100%) !important;
-          i{
-            font-size:40px;
-          }
-        }
-      }
-
-      @media #{$large-up} {
-        &:after{
-          content:'';
-          display: block;
-          width: 782px;
-          height: 493px;
-          background: url("../img/model.png");
-          position: absolute;
-          top: -24px;
-          left: 50%;
-        }
-      }
-    }
-  }
-
-  & .landing--3d {
     width: 100%;
-    height: 90vh;
-    min-height:600px;
-    max-height:900px;
-    overflow: hidden;
-  }
 
-  @media #{$medium-down} {
+    &.landing--back {
+        background: $ld-gradient;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        min-height: 600px;
+    }
+
+    &.landing--front {
+        position: relative;
+        z-index: 0;
+        min-height: 600px;
+        max-height: 900px;
+
+        & .landing--middle {
+            color: white;
+
+            & h4 {
+                font-family: "Nexa";
+                font-size: 48px;
+                opacity: .8;
+                font-weight: 300;
+                line-height: 40px;
+                margin-top: 133px;
+            }
+
+            @media #{$small-down} {
+                & h4 {
+                    margin-top: 93px;
+                }
+            }
+
+            & h1 {
+                font-family: "Nexa";
+                font-size: 60px;
+                line-height: 80px;
+                font-weight: 600;
+            }
+
+            & p {
+                font-family: "Lato";
+                font-size: 21px;
+                margin-bottom: 40px;
+
+                @media #{$medium-down} {
+                    &.buttons {
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            & .button {
+                box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+                transition: all .2s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                }
+
+                &:active {
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                }
+
+                &.is-success {
+                    padding-top: calc(0.175em - 1px);
+                    background: linear-gradient(43deg, #0AA655 0%, #11CC6B 100%) !important;
+
+                    & i {
+                        font-size: 24px;
+                        margin-left: 16px;
+                    }
+                }
+
+                &.has-icon {
+                    padding-right: 0.75em;
+                    padding-left: 0.75em;
+                    margin-left: 0.75em;
+                    color: #222;
+                    background: linear-gradient(0deg, #DDD 0%, #FFF 100%) !important;
+
+                    i {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            @media #{$large-up} {
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 782px;
+                    height: 493px;
+                    background: url("../img/model.png");
+                    position: absolute;
+                    top: -24px;
+                    left: 50%;
+                }
+            }
+        }
+    }
+
+    & .landing--3d {
+        width: 100%;
+        height: 90vh;
+        min-height: 600px;
+        max-height: 900px;
+        overflow: hidden;
+    }
+
+    @media #{$medium-down} {
+        & .landing--curve {
+            top: 80%;
+            height: 20%;
+        }
+    }
+
+    @media #{$large-down} {
+        & .landing--curve {
+            top: 60%;
+            height: 40%;
+        }
+    }
+
     & .landing--curve {
-      top: 80%;
-      height: 20%;
-    }
-  }
+        position: absolute;
+        background: url("../img/curve.svg");
+        background-size: 100% 100%;
+        top: 30%;
+        height: 70%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 5px 0 white;
 
-  @media #{$large-down} {
-    & .landing--curve {
-      top: 60%;
-      height: 40%;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: url("../img/curve.svg");
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            transform-origin: 100% 0;
+            transform: rotate(2deg);
+            box-shadow: 0 50px 0 white,inset 0 -5px 0 white;
+            opacity: .1;
+        }
     }
-  }
-
-  & .landing--curve {
-    position: absolute;
-    background: url('../img/curve.svg');
-    background-size: 100% 100%;
-    top: 30%;
-    height: 70%;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 5px 0 white;
-    &:after{
-      content:'';
-      display: block;
-      position: absolute;
-      background: url('../img/curve.svg');
-      background-size: 100% 100%;
-      width: 100%;
-      height: 100%;
-      transform-origin:100% 0;
-      transform:rotate(2deg);
-    box-shadow: 0 50px 0 white,inset 0 -5px 0 white;
-      opacity: .1;
-    }
-  }
 }
-.hero.one--more--thing{
-  background-image: $ld-gradient !important;
+
+.hero.one--more--thing {
+    background-image: $ld-gradient !important;
+}
+
+.is-artistic {
+    figure {
+        height: 375px;
+        margin-top: -24px;
+        position: relative;
+
+        img {
+            top: -24px;
+            position: absolute;
+        }
+    }
+}
+
+@media #{$large-down} {
+    .is-artistic {
+        figure img {
+            position: relative;
+        }
+
+        .columns {
+            flex-direction: column-reverse;
+
+            .column {
+                text-align: center;
+
+                &:last-child {
+                    text-align: center !important;
+                    padding-bottom: 64px;
+                }
+            }
+        }
+    }
 }
