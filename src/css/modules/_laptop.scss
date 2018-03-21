@@ -94,6 +94,22 @@
         }
     }
 
+    @media #{$small-down} {
+        .column.is-content {
+            .content {
+                padding: 0 24px;
+
+                & .column:first-child {
+                    display: none;
+                }
+            }
+        }
+
+        & .laptop-container {
+            display: none;
+        }
+    }
+
     & .laptop-container {
         position: relative;
 

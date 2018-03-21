@@ -16,6 +16,12 @@
         min-height: 600px;
         max-height: 900px;
 
+        @media #{$small-down} {
+            & h4 {
+                margin-top: 70px !important;
+            }
+        }
+
         & .landing--middle {
             color: white;
 
@@ -26,12 +32,6 @@
                 font-weight: 300;
                 line-height: 40px;
                 margin-top: 133px;
-            }
-
-            @media #{$small-down} {
-                & h4 {
-                    margin-top: 93px;
-                }
             }
 
             & h1 {
@@ -121,10 +121,12 @@
         }
     }
 
-    @media #{$large-down} {
-        & .landing--curve {
-            top: 60%;
-            height: 40%;
+    @media #{$medium-up} {
+        @media #{$large-down} {
+            & .landing--curve {
+                top: 60%;
+                height: 40%;
+            }
         }
     }
 
@@ -154,10 +156,6 @@
     }
 }
 
-.hero.one--more--thing {
-    background-image: $ld-gradient !important;
-}
-
 .is-artistic {
     figure {
         height: 375px;
@@ -169,6 +167,14 @@
             position: absolute;
         }
     }
+
+    h3 {
+        color: $ld-black !important;
+    }
+
+    .columns {
+        flex-direction: row-reverse;
+    }
 }
 
 @media #{$large-down} {
@@ -178,14 +184,14 @@
         }
 
         .columns {
-            flex-direction: column-reverse;
+            flex-direction: column;
 
             .column {
-                text-align: center;
+                text-align: center !important;
+                padding-bottom: 64px;
 
                 &:last-child {
-                    text-align: center !important;
-                    padding-bottom: 64px;
+                    text-align: center;
                 }
             }
         }

@@ -1,10 +1,13 @@
-$small: 400px !default;
+$xsmall: 400px !default;
+$small: 600px !default;
 $medium: $tablet !default;
 $large: $desktop !default;
 $full: $widescreen !default;
 
 $menu-width: 227px !default;
 
+$xsmall-up: "only screen and (min-width: #{$xsmall})" !default;
+$xsmall-down: "only screen and (max-width: #{$xsmall - 1})" !default;
 $small-up: "only screen and (min-width: #{$small})" !default;
 $small-down: "only screen and (max-width: #{$small - 1})" !default;
 $medium-up: "only screen and (min-width: #{$medium})" !default;
