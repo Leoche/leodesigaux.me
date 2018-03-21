@@ -1,5 +1,5 @@
 // Variables
-const outputPath = './dist'
+const outputPath = '../public/assets'
 const assetPath = './src'
 const dev = process.env.NODE_ENV !== 'production'
 
@@ -117,7 +117,7 @@ const config = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({inject: true, template: 'src/html/index.html'}),
+    new HtmlWebpackPlugin({filename: 'index.html', inject: true, template: 'src/html/index.html'}),
     new HtmlWebpackPlugin({filename: 'blog.html', inject: true, template: 'src/html/blog.html'}),
     new HtmlWebpackPlugin({filename: 'labs.html', inject: true, template: 'src/html/labs.html'}),
     new HtmlWebpackPlugin({filename: 'contact.html', inject: true, template: 'src/html/contact.html'}),
