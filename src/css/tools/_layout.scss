@@ -20,7 +20,7 @@
 }
 
 h1, h2, h3 {
-    font-family: "Nexa";
+    font-family: "Nexa","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: bold !important;
 }
 
@@ -45,31 +45,42 @@ h1, h2, h3 {
     }
 }
 
-@media #{$medium-down} {
-    .column-tri {
-        grid-template-columns: 100% !important;
-        grid-column-gap: 0% !important;
-    }
+@media #{$medium-up} {
+    @media #{$large-down} {
+        .column-grid {
+            &.column-duo {
+                grid-template-columns: 100%;
+                grid-column-gap: 0%;
+            }
 
-    .column-quad {
-        grid-column-gap: 2% !important;
+            &.column-tri {
+                grid-template-columns: 49% 49%;
+                grid-column-gap: 2%;
+            }
+
+            &.column-quad {
+                grid-template-columns: 32% 32% 32%;
+                grid-column-gap: 2%;
+            }
+        }
     }
 }
 
-@media #{$large-down} {
-    .column-duo {
-        grid-template-columns: 100% !important;
-        grid-column-gap: 0% !important;
-    }
+@media #{$medium-down} {
+    .column-grid {
+        &.column-duo {
+            grid-template-columns: 100%;
+            grid-column-gap: 0%;
+        }
 
-    .column-tri {
-        grid-template-columns: 49% 49%;
-        grid-column-gap: 2%;
-    }
+        &.column-tri {
+            grid-template-columns: 100%;
+            grid-column-gap: 0%;
+        }
 
-    .column-quad {
-        grid-template-columns: 32% 32% 32% !important;
-        grid-column-gap: 2% !important;
+        &.column-quad {
+            grid-column-gap: 2%;
+        }
     }
 }
 
