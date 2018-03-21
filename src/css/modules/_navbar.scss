@@ -3,7 +3,7 @@
     margin-bottom: 16px;
 
     .navbar-burger {
-        z-index: 9;
+        z-index: 10;
 
         span {
             background: #111;
@@ -85,7 +85,7 @@
         max-width: 100% !important;
 
         .navbar-brand.is-active {
-            z-index: 9;
+            z-index: 10;
             position: fixed;
             top: 0;
             width: 100%;
@@ -107,7 +107,7 @@
             text-align: center;
             justify-content: center;
             align-items: center;
-            z-index: 1;
+            z-index: 9;
             background: rgba(255, 255, 255, 1);
             animation: .3s fade forwards;
         }
