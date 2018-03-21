@@ -1,0 +1,72 @@
+.card-lab {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+    transform: translateY(0px);
+    box-shadow: 0 3px 10px -3px gray !important;
+    display: flex;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px -10px gray !important;
+
+        &:before {
+            left: 70px;
+        }
+    }
+
+    &:after, &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 80px;
+        width: 0;
+        z-index: 1;
+        height: 0;
+        transition: left .15s;
+        border-style: solid;
+        border-width: 0 0 100px 20px;
+        border-color: transparent transparent #ffffff transparent;
+    }
+
+    &:before {
+        border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+        width: 30px;
+        left: 75px;
+    }
+
+    figure {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        background: white;
+        z-index: 1;
+        padding: 0 18px;
+        flex-grow: 1;
+
+        .title, .subtitle {
+            margin: 0 0 8px 0 !important;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: $ld-gray;
+        }
+
+        .level-right {
+            .tag {
+                margin-left: 8px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
