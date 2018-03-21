@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return view('index')->with("is_home", true);
 });
+
+$router->get('/contact', function () use ($router) {
+    return view('contact');
+});
