@@ -7,3 +7,8 @@ npm-debug*
 .directory
 *.sublime*
 gravitsrc
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
