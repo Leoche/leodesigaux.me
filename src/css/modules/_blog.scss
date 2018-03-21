@@ -112,7 +112,7 @@
             margin-bottom: .5em;
 
             .level-left {
-                align-items: flex-end;
+                align-items: center;
 
                 h2 {
                     color: $ld-black;
@@ -160,7 +160,7 @@
     figure.is-thumb {
         width: 256px;
         height: 256px;
-        margin: 0 auto;
+        margin: 64px auto !important;
         overflow: hidden;
         border-radius: 1em;
     }
