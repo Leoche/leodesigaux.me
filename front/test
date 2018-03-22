@@ -1,0 +1,52 @@
+#!/bin/sh
+ 
+# Reinitialise les regles
+iptables -t filter -F
+iptables -t filter -X
+ 
+# Autorise les connexions deja etabli et localhost
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -t filter -A INPUT -i lo -j ACCEPT
+iptables -t filter -A OUTPUT -o lo -j ACCEPT
+ 
+# DNS In/Out
+iptables -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT
+iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport 53 -j ACCEPT
+iptables -t filter -A INPUT -p udp --dport 53 -j ACCEPT
+ 
+# IRC
+#iptables -t filter -A OUTPUT -p tcp --dport 6667 -j ACCEPT
+#iptables -t filter -A OUTPUT -p udp --dport 6667 -j ACCEPT
+#iptables -t filter -A INPUT -p tcp --dport 6667 -j ACCEPT
+#iptables -t filter -A INPUT -p udp --dport 6667 -j ACCEPT
+ 
+# SSH
+iptables -t filter -A INPUT -p tcp --dport 2285 -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport 2285 -j ACCEPT
+ 
+# APT/Key
+#iptables -t filter -A INPUT -p tcp --dport 11371 -j ACCEPT
+ 
+# HTTP
+iptables -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport 80 -j ACCEPT
+ 
+# TOR
+#iptables -t filter -A OUTPUT -p tcp --dport 9001 -j ACCEPT
+#iptables -t filter -A INPUT -p tcp --dport 9001 -j ACCEPT
+#iptables -t filter -A OUTPUT -p tcp --dport 9030 -j ACCEPT
+#iptables -t filter -A INPUT -p tcp --dport 9030 -j ACCEPT
+#iptables -t filter -A OUTPUT -p tcp --dport 9050 -j ACCEPT
+#iptables -t filter -A INPUT -p tcp --dport 9050 -j ACCEPT
+ 
+# ICMP
+iptables -t filter -A OUTPUT -p icmp -j ACCEPT
+iptables -t filter -A INPUT -p icmp -j ACCEPT
+ 
+# Murmur
+#iptables -t filter -A OUTPUT -p tcp --dport 64837 -j ACCEPT
+#iptables -t filter -A INPUT -p tcp --dport 64837 -j ACCEPT
+#iptables -t filter -A OUTPUT -p udp --dport 64837 -j ACCEPT
+#iptables -t filter -A INPUT -p udp --dport 64837 -j ACCEPT

@@ -1,4 +1,4 @@
-#logo {
+.logo {
     width: 188px;
     height: 21px;
     background: url("../img/logo.png");
@@ -8,6 +8,7 @@
 
     &.is-white {
         background-position: 0 0;
+        color: white;
     }
 
     &.is-icon {
@@ -16,21 +17,30 @@
     }
 
     &.is-text {
-        background-position: -67px 21px;
-        width: 120px;
+        font-family: "Nexa";
+        background: none;
+        color: black;
+        font-size: 20px;
+        line-height: 24px;
 
-        &.is-white {
-            background-position: -67px 0;
+        &:before {
+            content: 'Léo';
+            font-weight: 300;
+        }
+
+        &:after {
+            content: 'Desigaux';
+            font-weight: 600;
         }
     }
 }
 
 .is-transparent .navbar .navbar-brand a.navbar-item {
-    & #logo {
+    & .logo {
         background-position: 0 0;
 
         &.is-text {
-            background-position: -67px 0;
+            color: white;
         }
     }
 }

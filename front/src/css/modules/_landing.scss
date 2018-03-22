@@ -6,14 +6,13 @@
         position: absolute;
         top: 0;
         left: 0;
-        pointer-events: none;
         min-height: 600px;
     }
 
     &.landing--front {
         position: relative;
         z-index: 0;
-        min-height: 600px;
+        min-height: 500px;
         max-height: 900px;
 
         @media #{$small-down} {
@@ -37,20 +36,34 @@
             & h1 {
                 font-family: "Nexa";
                 font-size: 60px;
-                line-height: 80px;
                 font-weight: 600;
+            }
+
+            @media #{$medium-down} {
+                & h1 {
+                    line-height: 50px;
+                }
             }
 
             & p {
                 font-family: "Lato";
                 font-size: 21px;
                 margin-bottom: 40px;
+                opacity: .5;
 
                 @media #{$medium-down} {
                     &.buttons {
                         display: flex;
-                        justify-content: center;
+                        justify-content: space-between;
+
+                        &.button {
+                            margin: 0;
+                        }
                     }
+                }
+
+                &.buttons {
+                    opacity: 1;
                 }
             }
 
@@ -81,7 +94,7 @@
                 &.has-icon {
                     padding-right: 0.75em;
                     padding-left: 0.75em;
-                    margin-left: 0.75em;
+                    margin-left: 0.50em;
                     color: #222;
                     background: linear-gradient(0deg, #DDD 0%, #FFF 100%) !important;
 
@@ -111,7 +124,6 @@
         height: 90vh;
         min-height: 600px;
         max-height: 900px;
-        overflow: hidden;
     }
 
     @media #{$medium-down} {
@@ -179,8 +191,12 @@
 
 @media #{$large-down} {
     .is-artistic {
-        figure img {
-            position: relative;
+        figure {
+            height: 280px;
+
+            img {
+                position: relative;
+            }
         }
 
         .columns {

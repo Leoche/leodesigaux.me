@@ -6,6 +6,7 @@
   <link rel="icon" href="{{ url('/favicon.ico?1') }}" />
   <link rel="icon" type="image/png" href="{{ url('/favicon.png?1') }}" />
   <link href="{{ url('/main.css?1') }}" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   @stack('head')
 </head>
 <body>
@@ -16,9 +17,9 @@
   <div class="container">
     <div class="content columns">
       <div class="column">
-        <div id="logo" class="is-icon"></div>
+        <div class="logo is-icon"></div>
         <div class="spacer"></div>
-        <div id="logo" class="is-text"></div>
+        <div class="logo is-text"></div>
         <div class="spacer is-large"></div>
         <p>N'hésitez pas à me contacter :)</p>
         <p class="has-text-grey">
@@ -59,7 +60,7 @@
     </div>
   </div>
 </footer>
-  <script type="text/javascript" src="{{ url('/main.js') }}"></script>
+  <script type="text/javascript" src="{{ url('/main.js') }}?de"></script>
   @stack('footer')
 </body>
 </html>

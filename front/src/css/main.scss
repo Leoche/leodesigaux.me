@@ -30,6 +30,8 @@ $footer-background-color: #FFF;
    ========================================================================== */
 body {
     font-size: 16px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     color: inherit;
     background: #FFF;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
