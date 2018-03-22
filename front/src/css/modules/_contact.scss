@@ -136,7 +136,7 @@
             width: 100%;
             height: calc(100% - 20px);
             border-radius: 1em;
-            box-shadow: 0 0 0 1.5em white;
+            box-shadow: 0 0 0 0.5em #fff, 0 1.5em 0 #fff;
             pointer-events: none;
         }
     }
