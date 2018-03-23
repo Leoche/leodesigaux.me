@@ -8,17 +8,6 @@ try {
     //
 }
 
-/*
-|--------------------------------------------------------------------------
-| Create The Application
-|--------------------------------------------------------------------------
-|
-| Here we will load the environment and create the application instance
-| that serves as the central piece of this framework. We'll use this
-| application as an "IoC" container and router for this framework.
-|
-*/
-
 $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
@@ -79,8 +68,7 @@ $app->singleton(
 */
 
 // $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Contentful\Laravel\ContentfulServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
