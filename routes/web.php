@@ -19,3 +19,4 @@ $router->get('/contact', function () use ($router) {
     return view('contact');
 });
 $router->get('/labo', "LabsController@index");
+$router->get('/labo/{slug:[a-z\-]+}', "LabsController@view");
