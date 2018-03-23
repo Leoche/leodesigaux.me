@@ -18,3 +18,4 @@ $router->get('/', function () use ($router) {
 $router->get('/contact', function () use ($router) {
     return view('contact');
 });
+$router->get('/labo', "LabsController@index");

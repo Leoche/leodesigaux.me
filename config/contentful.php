@@ -23,5 +23,5 @@ return [
     /**
      * Sets the locale in which to fetch content by default. NULL means the space'd default locale will be used
      */
-    'delivery.defaultLocale' => null
+    'delivery.defaultLocale' => "fr_FR"
 ];
