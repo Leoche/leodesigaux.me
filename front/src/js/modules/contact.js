@@ -1,6 +1,5 @@
 export default class Contact {
   constructor (container) {
-    window.e = this
     this.inputs = {
       name: document.querySelector('.input-name'),
       email: document.querySelector('.input-email'),
@@ -26,9 +25,7 @@ export default class Contact {
             if (data.success === true) {
               this.success()
             } else {
-              console.log('$data', data)
               data.errors.forEach($data => {
-                console.log('$data', $data)
                 this.error($data.name, $data.message)
               })
               this.enable()
