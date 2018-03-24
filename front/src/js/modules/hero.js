@@ -1,6 +1,5 @@
 /* global requestAnimationFrame */
 import * as THREE from 'three'
-import * as basicScroll from 'basicscroll'
 import texturemaker from '../utils/texturemaker'
 
 export default class Hero {
@@ -57,32 +56,6 @@ export default class Hero {
     document.addEventListener('mousemove', (event) => this.onMouseMove(event), false)
     document.addEventListener('touchmove', (event) => this.onDocumentTouchMove(event), false)
     window.addEventListener('resize', (event) => this.onWindowResize(event), false)
-
-    if (document.querySelector('.laptop') !== null) {
-      basicScroll.create({
-        elem: document.querySelector('.is-laptop'),
-        from: 'top-bottom',
-        to: 'middle-top',
-        direct: true,
-        props: {
-          '--laptop-origin': {
-            from: '100%',
-            timing: 'expoIn',
-            to: '10%'
-          },
-          '--laptop-deg': {
-            from: '-79deg',
-            timing: 'expoIn',
-            to: '-180deg'
-          },
-          '--laptop-percent': {
-            from: 0,
-            timing: 'expoIn',
-            to: 1
-          }
-        }
-      }).start()
-    }
   }
 
   generateMaterial (shape, size) {

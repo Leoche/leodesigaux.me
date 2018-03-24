@@ -1,10 +1,12 @@
 import Hero from './modules/hero'
 import Detector from './utils/detector'
+import Contact from './modules/contact'
 
 function init () {
   // Check for webGL capabilities
+
   if (!Detector.webgl || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    window.alert('no gl')
+    console.log('no gl')
   } else {
     if (document.querySelector('.landing--3d') !== null) {
       const container = document.querySelector('.landing--3d')
@@ -37,8 +39,10 @@ function init () {
       document.querySelector('.code-' + target).style.display = 'block'
     })
   })
-  document.querySelector('.code-html').style.display = 'block'
-  document.querySelectorAll('.tab-toggle')[0].classList.add('is-active')
+  if (document.querySelector('.code-html')) {
+    document.querySelector('.code-html').style.display = 'block'
+    document.querySelectorAll('.tab-toggle')[0].classList.add('is-active')
+  }
 
   document.querySelectorAll('.ld-layout-toggle').forEach($el => {
     $el.addEventListener('click', () => {
@@ -52,7 +56,28 @@ function init () {
       }
     })
   })
+
+  if (document.querySelector('.laptop') !== null) {
+    window.onscroll = function () {
+      let laptop = document.querySelector('.laptop')
+      let laptopC = laptop.getBoundingClientRect()
+      let y1 = 200
+      let y2 = -150
+      if (laptopC.top < y1 && laptopC.top > y2) {
+        let percent = (laptopC.top - y1) / (y2 - y1)
+        percent = percent * percent * percent
+        document.querySelector('.is-laptop').style.setProperty('--laptop-origin', (100 - percent * 100) + '%')
+        document.querySelector('.is-laptop').style.setProperty('--laptop-deg', (-79 - percent * 101) + 'deg')
+        document.querySelector('.is-laptop').style.setProperty('--laptop-percent', percent)
+      }
+    }
+  }
+
+  if (document.querySelector('.is-personal-informations') !== null) {
+    new Contact()
+  }
 }
+
 window.onload = () => {
   init()
 }
