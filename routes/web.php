@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Response;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -20,3 +20,8 @@ $router->get('/contact', function () use ($router) {
 });
 $router->get('/labo', "LabsController@index");
 $router->get('/labo/{slug:[a-z\-]+}', "LabsController@view");
+
+
+$router->post('/sendmail', function () use ($router) {
+  return response()->json(['success' => false, 'errors'=>[["name"=>"name","message"=>"deefef"]]], 200, ['Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS']);
+});
