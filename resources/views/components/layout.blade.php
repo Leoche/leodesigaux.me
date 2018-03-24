@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ url('/favicon.png?1') }}" />
   <link href="{{ url('/main.css?1') }}" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  @stack('head')
+  @stack('style')
 </head>
 <body>
   @stack('beforecontent')
@@ -61,6 +61,6 @@
   </div>
 </footer>
   <script type="text/javascript" src="{{ url('/main.js') }}?de"></script>
-  @stack('footer')
+  @stack('scripts')
 </body>
 </html>
