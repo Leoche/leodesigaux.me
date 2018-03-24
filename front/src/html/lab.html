@@ -21,21 +21,21 @@ ${require('./components/navbar.html')}
   <div class="columns">
     <div class="column">
       <div class="spacer"></div>
-      <div class="tabs is-fullwidth">
+            <div class="tabs is-fullwidth">
         <ul>
-          <li class="is-active">
+          <li class="tab-toggle" data-target="html">
             <a>
               <span class="icon is-small"><i class="ld ld-layout"></i></span>
               <span>HTML</span>
             </a>
           </li>
-          <li>
+          <li class="tab-toggle" data-target="css">
             <a>
               <span class="icon is-small"><i class="ld ld-droplet"></i></span>
               <span>Style</span>
             </a>
           </li>
-          <li>
+          <li class="tab-toggle" data-target="js">
             <a>
               <span class="icon is-small"><i class="ld ld-settings"></i></span>
               <span>Javascript</span>
@@ -43,11 +43,10 @@ ${require('./components/navbar.html')}
           </li>
         </ul>
       </div>
-      <pre><code>$(document).ready(function() {
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});</code></pre></div>
+      <pre class="code code-html"><code>{{ $entry->getHtml() }}</code></pre>
+      <pre class="code code-css"><code>{{ $entry->getCss() }}</code></pre>
+      <pre class="code code-js"><code>{{ $entry->getJs() }}</code></pre>
+    </div>
     <div class="column">
       <div class="frame"></div>
     </div>

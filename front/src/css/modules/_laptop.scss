@@ -63,6 +63,8 @@
         }
 
         .content {
+            overflow-x: hidden;
+
             .box-circle {
                 width: 64px;
                 height: 64px;
@@ -95,18 +97,32 @@
     }
 
     @media #{$small-down} {
+        .columns {
+            margin: 0 !important;
+        }
+
         .column.is-content {
+            overflow-x: hidden;
+
             .content {
                 padding: 0 24px;
 
                 & .column:first-child {
-                    display: none;
+                    //  display: none;
+
                 }
             }
         }
 
         & .laptop-container {
-            display: none;
+            width: 100%;
+            transform-origin: 50% 0;
+            height: 250px;
+            transform: scale(0.5);
+
+            & .laptop {
+                left: calc(50% - 355px);
+            }
         }
     }
 
