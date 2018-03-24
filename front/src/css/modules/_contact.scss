@@ -6,6 +6,32 @@
     overflow: hidden;
     position: relative;
 
+    .is-form {
+        max-height: 300px;
+        transition: all .8s;
+        overflow-y: hidden;
+
+        &.is-closed {
+            max-height: 0;
+        }
+    }
+
+    .empty {
+        max-height: 0px;
+        transition: all .8s .8s;
+        overflow-y: hidden;
+        padding: 0 !important;
+
+        & h2 {
+            font-size: 1.5em;
+        }
+
+        &.is-active {
+            max-height: 300px;
+            padding: 1em 1.5em !important;
+        }
+    }
+
     h1 {
         font-family: "Nexa";
         font-weight: bold !important;
@@ -20,6 +46,10 @@
         & + span i {
             color: $ld-blue;
         }
+    }
+
+    input.is-danger + span i {
+        color: $red;
     }
 
     .card-symbols {
