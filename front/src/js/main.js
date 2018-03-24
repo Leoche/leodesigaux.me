@@ -27,6 +27,31 @@ function init () {
       })
     })
   }
+  document.querySelectorAll('.tab-toggle').forEach($el => {
+    let target = $el.dataset.target
+    document.querySelectorAll('.code').forEach($el => { $el.style.display = 'none' })
+    $el.addEventListener('click', () => {
+      document.querySelectorAll('.code').forEach($el => { $el.style.display = 'none' })
+      document.querySelectorAll('.tab-toggle').forEach($el => { $el.classList.remove('is-active') })
+      $el.classList.add('is-active')
+      document.querySelector('.code-' + target).style.display = 'block'
+    })
+  })
+  document.querySelector('.code-html').style.display = 'block'
+  document.querySelectorAll('.tab-toggle')[0].classList.add('is-active')
+
+  document.querySelectorAll('.ld-layout-toggle').forEach($el => {
+    $el.addEventListener('click', () => {
+      document.querySelectorAll('.ld-layout-toggle').forEach($el => { $el.classList.remove('is-active') })
+      if ($el.classList.contains('ld-layout-h')) {
+        document.querySelector('.ld-layout-h').classList.add('is-active')
+        document.querySelector('.tabs').parentElement.parentElement.style.flexDirection = 'column-reverse'
+      } else {
+        document.querySelector('.ld-layout-v').classList.add('is-active')
+        document.querySelector('.tabs').parentElement.parentElement.style.flexDirection = 'row'
+      }
+    })
+  })
 }
 window.onload = () => {
   init()
