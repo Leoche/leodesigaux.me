@@ -4,7 +4,7 @@
   "scripts": {
     "updates": "npm-check-updates -u",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --no-info",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --no-info --host 0.0.0.0",
     "gh": "npm run build && gh-pages -d dist"
   },
   "author": "Grafikart <contact@grafikart.fr>",
