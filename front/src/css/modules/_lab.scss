@@ -8,6 +8,12 @@
             &:last-child {
                 line-height: 33px;
             }
+
+            @media #{$small-up} {
+                &:first-child, &:last-child {
+                    width: 205px;
+                }
+            }
         }
     }
 
