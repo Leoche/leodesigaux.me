@@ -14,7 +14,7 @@ export default class Contact {
       e.preventDefault()
       this.removeErrors()
       this.disable()
-      window.fetch('http://localhost/sendmail',
+      window.fetch('/sendmail',
         {
           method: 'POST',
           body: new window.FormData(this.form)
