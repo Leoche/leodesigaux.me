@@ -1,3 +1,4 @@
+/* global fetch FormData */
 export default class Contact {
   constructor (container) {
     this.inputs = {
@@ -10,14 +11,22 @@ export default class Contact {
     this.submit = document.querySelector('.is-submit')
     this.form = document.querySelector('.is-form')
     this.thanks = document.querySelector('.empty')
+    this.cancel.addEventListener('click', (e) => {
+      Object.entries(this.inputs).forEach($el => { $el[1].value = '' })
+    })
     this.submit.addEventListener('click', (e) => {
       e.preventDefault()
       this.removeErrors()
       this.disable()
-      window.fetch('/sendmail',
+
+      var data = new FormData()
+      data.append('name', this.inputs.name.value)
+      data.append('email', this.inputs.email.value)
+      data.append('message', this.inputs.message.value)
+      fetch('http://localhost/sendmail',
         {
           method: 'POST',
-          body: new window.FormData(this.form)
+          body: data
         }
       ).then(response => {
         if (response.status === 200) {
@@ -25,14 +34,23 @@ export default class Contact {
             if (data.success === true) {
               this.success()
             } else {
+              this.enable()
               data.errors.forEach($data => {
                 this.error($data.name, $data.message)
               })
-              this.enable()
             }
           }).catch(e => this.enable())
+        } else if (response.status === 429) {
+          this.globalerror('Trop de requêtes! Réessayez dans un instant.')
+          this.enable()
+        } else if (response.status === 500) {
+          this.globalerror('Erreur interne.')
+          this.enable()
         }
-      }).catch(e => this.enable())
+      }).catch((e, res) => {
+        this.globalerror('Erreur interne.')
+        this.enable()
+      })
     })
   }
   // UI
@@ -48,11 +66,15 @@ export default class Contact {
     this.cancel.setAttribute('disabled', true)
     this.submit.setAttribute('disabled', true)
   }
+  globalerror (message) {
+    document.querySelector('.is-global').innerHTML = message
+  }
   error (name, message) {
     this.inputs[name].classList.add('is-danger')
     this.inputs[name].parentElement.nextElementSibling.innerHTML = message
   }
   removeErrors (name, message) {
+    document.querySelector('.is-global').innerHTML = ''
     Object.entries(this.inputs).forEach($el => {
       $el[1].parentElement.nextElementSibling.innerHTML = ''
       $el[1].classList.remove('is-danger')

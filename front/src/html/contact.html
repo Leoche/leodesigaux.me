@@ -9,7 +9,7 @@ ${require('./components/navbar.html')}
           <div class="card-front">
             <h1>Contact</h1>
             <p class="has-text-grey">Une idée, un projet ou une demande d'informations.<br/>Gardons contact! <i class="ld ld-tag_faces"></i></p>
-            <form action="#" class="is-form">
+            <form action="#" class="is-form" enctype="multipart/form-data" >
               <div class="field">
                 <div class="control has-icons-left">
                   <input class="input is-danger input-name" type="text" placeholder="Nom est prénom...">
@@ -36,7 +36,7 @@ ${require('./components/navbar.html')}
                 </div>
                 <p class="help is-danger"></p>
               </div>
-              <div class="notifications"></div>
+              <div class="is-global has-text-danger"></div>
               <div class="field is-grouped is-grouped-right">
                 <div class="control">
                   <a href="#" class="button is-white is-cancel">Effacer</a>

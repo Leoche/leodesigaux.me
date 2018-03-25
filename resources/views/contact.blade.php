@@ -9,38 +9,42 @@
           <div class="card-front">
             <h1>Contact</h1>
             <p class="has-text-grey">Une idée, un projet ou une demande d'informations.<br/>Gardons contact! <i class="ld ld-tag_faces"></i></p>
-            <form action="#">
+             <form action="#" class="is-form" method="post" enctype="multipart/form-data" >
               <div class="field">
-                <p class="control has-icons-left">
-                  <input class="input" type="text" placeholder="Nom est prénom...">
+                <div class="control has-icons-left">
+                  <input class="input input-name" type="text" placeholder="Nom est prénom...">
                   <span class="icon is-medium is-left">
                     <i class="ld ld-user ld-md"></i>
                   </span>
-                </p>
+                </div>
+                <p class="help is-danger"></p>
               </div>
 
               <div class="field">
-                <p class="control has-icons-left">
-                  <input class="input" type="email" placeholder="Email...">
+                <div class="control has-icons-left">
+                  <input class="input input-email" type="email" placeholder="Email...">
                   <span class="icon is-medium is-left">
                     <i class="ld ld-at ld-md"></i>
                   </span>
-                </p>
+                </div>
+                <p class="help is-danger"></p>
               </div>
 
               <div class="field">
                 <div class="control">
-                  <textarea class="textarea" placeholder="Comment puis-je vous aider?"></textarea>
+                  <textarea class="textarea input-message" placeholder="Comment puis-je vous aider?"></textarea>
                 </div>
+                <p class="help is-danger"></p>
               </div>
+              <div class="is-global has-text-danger"></div>
               <div class="field is-grouped is-grouped-right">
                 <div class="control">
-                  <button class="button is-white">Effacer</button>
-                  <button class="button is-info">Envoyer</button>
+                  <a href="#" class="button is-white is-cancel">Effacer</a>
+                  <a href="#" class="button is-info is-submit">Envoyer</a>
                 </div>
               </div>
             </form>
-            <div class="empty is-hidden">
+            <div class="empty">
               <i class="ld ld-tag_faces ld-5x"></i>
               <h2>Merci de votre message</h2>
               <p>Je prendrais soin de vous répondre dans les premier delais</p>
