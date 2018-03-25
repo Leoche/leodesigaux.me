@@ -79,6 +79,24 @@
         .level-right {
             color: $ld-light;
             font-size: 12px;
+
+            & .level-item {
+                span {
+                    margin-left: 3px;
+
+                    &:before {
+                        content: ' / ';
+                    }
+
+                    &:first-child {
+                        margin-left: 0;
+
+                        &:before {
+                            content: '';
+                        }
+                    }
+                }
+            }
         }
     }
 }
