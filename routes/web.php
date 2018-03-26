@@ -18,6 +18,7 @@ $router->get('/realisations', "WorksController@index");
 
 $router->get('/labo', "LabsController@index");
 $router->get('/labo/{slug:[a-z\-]+}', "LabsController@view");
+$router->get('/labo/iframe/{slug:[a-z\-]+}', "LabsController@iframe");
 
 
 $router->get('/contact', function () use ($router) {

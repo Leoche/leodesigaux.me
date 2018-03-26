@@ -48,7 +48,9 @@
       <pre class="code code-js"><code>{{ $entry->getJs() }}</code></pre>
     </div>
     <div class="column">
-      <div class="frame"></div>
+      <div class="frame">
+        <iframe src="/labo/iframe/{{ $entry->getSlug() }}" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
     </div>
   </div>
   <div class="spacer is-large"></div>

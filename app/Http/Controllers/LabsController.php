@@ -30,4 +30,20 @@ class LabsController extends ContentfulController
    return view("labo")->with("entries", $entries);
  }
 
+  public function iframe($slug)
+  {
+    $this->query->setContentType("lab")->where("fields.slug", $slug);
+    $entries = $this->client->getEntries($this->query);
+    $items = $entries->getItems();
+    if($items){
+       $entry = $items[0];
+       $html = htmlspecialchars_decode(strval($entry->getHtml()),ENT_HTML5);
+       $html = str_replace("</head>", "<style>".$entry->getCss()."</style></head>", $entry->getHtml());
+       $html = str_replace("</body>", "<script src='".$entry->getBundle()->getFile()->getUrl()."'></script></body>", $entry->getHtml());
+       header('Content-Type: text/html; charset=utf-8');
+       return $html;
+    }else{
+       return abort(404);
+    }
+  }
 }
