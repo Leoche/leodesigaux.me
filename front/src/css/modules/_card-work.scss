@@ -15,6 +15,13 @@
         transition: transform .2s, box-shadow .2s;
         transform: translateY(0px);
         box-shadow: 0 3px 10px gray;
+        padding-top: 57.25%;
+
+        img {
+            max-width: 101%;
+            width: 101%;
+            height: 101%;
+        }
     }
 
     & .card-content {
