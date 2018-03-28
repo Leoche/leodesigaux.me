@@ -20,6 +20,8 @@ $router->get('/labo', "LabsController@index");
 $router->get('/labo/{slug:[a-z\-]+}', "LabsController@view");
 $router->get('/labo/iframe/{slug:[a-z\-]+}', "LabsController@iframe");
 
+$router->get('/blog', "BlogController@index");
+$router->get('/blog/{slug:[a-z\-]+}', "BlogController@index");
 
 $router->get('/contact', function () use ($router) {
     return view('pages.contact');
