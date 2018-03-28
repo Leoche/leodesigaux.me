@@ -1,5 +1,6 @@
-import Hero from './modules/hero'
 import Detector from './utils/detector'
+import Filter from './modules/filter'
+import Hero from './modules/hero'
 import Contact from './modules/contact'
 
 function init () {
@@ -75,6 +76,10 @@ function init () {
 
   if (document.querySelector('.is-personal-informations') !== null) {
     new Contact()
+  }
+
+  if (document.querySelector('.filters-toggle') !== null) {
+    new Filter()
   }
 }
 
