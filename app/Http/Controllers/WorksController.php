@@ -11,20 +11,20 @@ class WorksController extends ContentfulController
 
     $entries = $this->client->getEntries($this->query);
     setlocale (LC_TIME, "fr_FR.utf8");
-    $content = array();
+    $categories = array();
     $titles = array(
       "web"=>"Projets web",
       "game"=>"Jeux vidéo",
       "other"=>"Logiciels & autres"
     );
     foreach ($entries->getItems() as $entry) {
-      if (isset($content[$entry->getCategory()])) {
-        array_push($content[$entry->getCategory()], $entry);
+      if (isset($categories[$entry->getCategory()])) {
+        array_push($categories[$entry->getCategory()], $entry);
       } else {
-        $content[$entry->getCategory()] = [$entry];
+        $categories[$entry->getCategory()] = [$entry];
       }
     }
-    return view("realisations")->with("content", $content)->with("titles", $titles);
+    return view("realisations")->with("categories", $categories)->with("titles", $titles)->with("entries", $entries);
   }
 
 }
