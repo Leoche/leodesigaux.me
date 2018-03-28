@@ -1,3 +1,22 @@
+.lined {
+    margin-top: 16px;
+
+    h2 {
+        margin-top: 16px;
+        box-shadow: inset 0 -7px white, inset 0 -8px #c5c2c2;
+
+        & span {
+            color: $ld-gray;
+            background: white;
+            padding-right: 8px;
+        }
+    }
+}
+
+.filters .tag {
+    cursor: pointer;
+}
+
 .card.card-work {
     box-shadow: none;
     margin-bottom: 64px;
@@ -79,6 +98,12 @@
                     & i {
                         transform: translateX(3px);
                     }
+                }
+
+                margin-right: 12px;
+
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
