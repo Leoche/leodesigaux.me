@@ -21,7 +21,7 @@
             margin-top: 10px;
         }
 
-        &:hover {
+        &:hover, &.is-active {
             background-color: transparent !important;
 
             & span {
@@ -77,6 +77,14 @@
 
                 &:hover {
                     color: #fff;
+                }
+            }
+
+            &.is-active {
+                & span {
+                    &:hover {
+                        color: #fff;
+                    }
                 }
             }
         }

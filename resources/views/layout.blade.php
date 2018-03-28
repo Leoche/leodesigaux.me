@@ -35,11 +35,11 @@
       <div class="column">
         <h3><span>Navigation</span></h3>
         <ul>
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/realisations">Réalisations</a></li>
-          <li><a href="/labo">Labo</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a class="{{ isActive("", false) }}" href="/">Accueil</a></li>
+          <li><a class="{{ isActive("realisations", true) }}" href="/realisations">Réalisations</a></li>
+          <li><a class="{{ isActive("labo", true) }}" href="/labo">Labo</a></li>
+          <li><a class="{{ isActive("blog", true) }}" href="/blog">Blog</a></li>
+          <li><a class="{{ isActive("contact", false) }}" href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="column">
