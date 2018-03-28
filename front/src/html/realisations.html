@@ -1,147 +1,72 @@
 ${require('./components/header.html')}
 ${require('./components/navbar.html')}
-<section>
   <!-- START TESTING -->
-
+<section>
   <div class="container is-padded-mobile">
-    <div class="content">
-      <h1>Réalisations</h1>
-      <hr>
+    <div class="level is-pagetitle is-mobile">
+      <div class="level-left content">
+        <h1>Réalisations</h1>
+      </div>
+      <div class="level-right">
+        <a class="filters-toggle" href="#"><i class="ld ld-filter"></i> Filtres</a>
+        <p class="filters">
+          <span>:</span>
+          <span class="tag" data-target="web">web</span>
+          <span class="tag" data-target="game">game</span>
+          <span class="tag" data-target="other">other</span>
+        </p>
+      </div>
     </div>
-    <div class="column-grid column-tri">
-      <div class="card card-work">
-        <div class="card-image">
-          <figure class="image is-16by9">
-            <img src="http://localhost:8080/src/img/work_test.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="content">
+    <div data-filtered="web">
+      <div class="lined content">
+        <h2><span>Web</span></h2>
+      </div>
+      <div class="column-grid column-tri">
+        <!-- card -->
+        <div class="card card-work">
+          <div class="card-image">
+            <figure class="image is-16by9">
+              <img src="http://localhost:8080/src/img/work_test.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="content">
                 <div class="title">Optimalog.com</div>
                 <div class="subtitle">Septembre 2004</div>
+                </div>
+              </div>
+              <div class="level-right">
+                <i class="ld ld-monitor"></i>
               </div>
             </div>
-            <div class="level-right"><i class="ld ld-monitor"></i></div>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aut ab soluta, minima velit.</p>
+            </div>
           </div>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aut ab soluta, minima velit.</p>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="level-item">
-                <a href="#">VISITER <i class="ld ld-chevrons-right"></i></a>
+          <div class="card-footer">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item">
+                  <a target="_blank" href="{{ $entry->getLink() }}">VISITER <i class="ld ld-chevrons-right"></i></a>
+                  <a target="_blank" href="{{ $entry->getLink() }}">JOUER <i class="ld ld-chevrons-right"></i></a>
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item tag-container">
+                  <span>Tag</span>
+                  <span>Tag</span>
+                  <span>Tag</span>
+                </div>
               </div>
             </div>
-            <div class="level-right">
-              <div class="level-item">Frontend, backend / Bootstrap3, PHP</div>
-            </div>
           </div>
         </div>
-      </div>
-      <div class="card card-work">
-        <div class="card-image">
-          <figure class="image is-16by9">
-            <img src="https://placeimg.com/640/360/tech?2rt" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="content">
-                <div class="title">Browser Feature Support</div>
-                <div class="subtitle">September 29th 2018</div>
-              </div>
-            </div>
-            <div class="level-right"><i class="ld ld-monitor"></i><i class="ld ld-smartphone"></i></div>
-          </div>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aut ab soluta, minima velit.</p>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="level-item">
-                <a href="#">VISITER <i class="ld ld-chevrons-right"></i></a>
-              </div>
-            </div>
-            <div class="level-right">
-              <div class="level-item">Frontend / Bulma</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card card-work">
-        <div class="card-image">
-          <figure class="image is-16by9">
-            <img src="http://localhost:8080/src/img/work2_test.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="content">
-                <div class="title">Browser Feature Support</div>
-                <div class="subtitle">September 29th 2018</div>
-              </div>
-            </div>
-            <div class="level-right"><i class="ld ld-monitor"></i><i class="ld ld-smartphone"></i></div>
-          </div>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aut ab soluta, minima velit.</p>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="level-item">
-                <a href="#">VISITER <i class="ld ld-chevrons-right"></i></a>
-              </div>
-            </div>
-            <div class="level-right">
-              <div class="level-item">Frontend / Bulma</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card card-work">
-        <div class="card-image">
-          <figure class="image is-16by9">
-            <img src="https://placeimg.com/640/360/tech?2" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="content">
-                <div class="title">Browser Feature Support</div>
-                <div class="subtitle">September 29th 2018</div>
-              </div>
-            </div>
-            <div class="level-right"><i class="ld ld-monitor"></i><i class="ld ld-smartphone"></i></div>
-          </div>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae aut ab soluta, minima velit.</p>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="level-item">
-                <a href="#">VISITER <i class="ld ld-chevrons-right"></i></a>
-              </div>
-            </div>
-            <div class="level-right">
-              <div class="level-item">Frontend / Bulma</div>
-            </div>
-          </div>
-        </div>
+        <!-- end card -->
       </div>
     </div>
   </div>
 </section>
+
 ${require('./components/footer.html')}

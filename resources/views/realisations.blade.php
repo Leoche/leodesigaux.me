@@ -7,7 +7,7 @@
         <h1>Réalisations</h1>
       </div>
       <div class="level-right">
-        <a class="toggle" href="#"><i class="ld ld-filter"></i> Filtres</a>
+        <a class="filters-toggle" href="#"><i class="ld ld-filter"></i> Filtres</a>
         <p class="filters">
           <span>:</span>
           @foreach($content as $category => $entries)
@@ -17,9 +17,9 @@
       </div>
     </div>
     @foreach($content as $category => $entries)
-    <div class="filtered" data-target="{{ $category }}">
-      <div class="content">
-        <h2><span>Coordonnées</span></h2>
+    <div  data-filtered="{{ $category }}">
+      <div class="lined content">
+        <h2><span>{{ $titles[$category] }}</span></h2>
       </div>
       <div class="column-grid column-tri">
         @foreach(array_reverse($entries) as $entry)
