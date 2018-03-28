@@ -24,7 +24,7 @@ class WorksController extends ContentfulController
         $categories[$entry->getCategory()] = [$entry];
       }
     }
-    return view("realisations")->with("categories", $categories)->with("titles", $titles)->with("entries", $entries);
+    return view("pages.realisations")->with("categories", $categories)->with("titles", $titles)->with("entries", $entries);
   }
 
 }

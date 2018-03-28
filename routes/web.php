@@ -11,7 +11,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return view('index')->with("is_home", true);
+    return view('pages.index')->with("is_home", true);
 });
 
 $router->get('/realisations', "WorksController@index");
@@ -22,7 +22,7 @@ $router->get('/labo/iframe/{slug:[a-z\-]+}', "LabsController@iframe");
 
 
 $router->get('/contact', function () use ($router) {
-    return view('contact');
+    return view('pages.contact');
 });
 $router->group(['middleware' => 'throttle:255,1'], function () use ($router) {
   $router->post('/sendmail',"ContactController@send");

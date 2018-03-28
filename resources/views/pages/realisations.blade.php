@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('layout')
 @section('content')
 <section>
   <div class="container is-padded-mobile">

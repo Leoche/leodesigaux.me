@@ -11,7 +11,7 @@ class LabsController extends ContentfulController
 
     $entries = $this->client->getEntries($this->query);
     setlocale (LC_TIME, "fr_FR.utf8");
-    return view("labo")->with("entries", $entries);
+    return view("pages.labo")->with("entries", $entries);
   }
 
   public function view($slug)
@@ -22,12 +22,10 @@ class LabsController extends ContentfulController
     $items = $entries->getItems();
     if ($items) {
       $item = $items[0];
-      return view("labopost")->with("entry", $item);
+      return view("pages.labopost")->with("entry", $item);
     } else {
       return abort(404);
     }
-
-   return view("labo")->with("entries", $entries);
  }
 
   public function iframe($slug)

@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('layout')
 @push('beforecontent')
 <div class="landing landing--back">
   <div class="landing--curve"></div>
