@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CatLife - Ludum Dare #26</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <style type="text/css">
+          html, body{width: 100%;height: 100%; overflow: hidden;}
+      		body{background:#62a0e3;font-family: sans-serif;color:#444;font-size:16px;}
+      		h1{color:#FEFEFE;text-align: left;margin: 0 16px 32px;text-shadow:0 1px 3px #17406d;}
+      		.foot{color:#c8e2ff;font-size:14px;margin: 32px 16px 0;}
+          p{color:#17406d; margin: 8px 16px;}
+      		a{color:#FFF;text-decoration:underline;}
+      		a:hover{color:#FFF;text-decoration:underline;}
+      		#container{display:flex;justify-content: center; align-items:center;flex-direction:column;width: 100%;height: 100%;}
+      		#game-container{width:600px;height:300px;box-shadow:0 5px 35px #17406d;margin-bottom: 32px;border-radius: 15px;overflow: hidden;}
+      		#images{display:none;}
+      		@font-face{font-family:"Somy";src:url(font/somy.ttf);}
+        </style>
+    </head>
+    <body>
+    	<div id="container">
+    		<h1>CatLife - Ludum Dare #26</h1>
+	        <div id="game-container">
+	        	<canvas id="game" width="600" height="300"></canvas>
+	        </div>
+          <p>Rules: You are a cat who survives to the city, arrows to move, space to jump, stay alive as long as you can.</p>
+          <p>Commmands: arrows & space</p>
+	        <span class="foot">Made by <a href="/">Léo DESIGAUX</a> - HTML5/JS - Ludum Dare #26 - ~30 Hours of work</span>
+	    </div>
+	    <div id="images">
+	    	<img src="images/cat.gif" id="image-cat" alt="image-cat" />
+	    	<img src="images/roads.gif" id="image-roads" alt="image-roads" />
+	    	<img src="images/sky.gif" id="image-sky" alt="image-sky" />
+	    	<img src="images/maisons.gif" id="image-maison" alt="image-maison" />
+	    	<img src="images/garage.gif" id="image-garage" alt="image-garage" />
+	    	<img src="images/murs.gif" id="image-murs" alt="image-murs" />
+	    	<img src="images/voitures.gif" id="image-voitures" alt="image-voitures" />
+	    	<img src="images/motos.gif" id="image-motos" alt="image-motos" />
+	    	<img src="images/buildings.gif" id="image-buildings" alt="image-buildings" />
+	    	<img src="images/gameover.gif" id="image-gameover" alt="image-gameover" />
+	    	<img src="images/logo.gif" id="image-logo" alt="image-logo" />
+	    </div>
+        <script src="js/main.js"></script>
+        <script type="text/javascript"> var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-30515506-1']);  _gaq.push(['_setDomainName', 'leoche.org']);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
+    </body>
+</html>
