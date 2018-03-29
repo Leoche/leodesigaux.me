@@ -27,7 +27,7 @@
         <p class="title is-4">{{ $entry->getTitle() }}</p>
         <div class="level is-mobile">
           <div class="level-left">
-            <p class="subtitle">{{ ucwords(strftime('%e %B %G', $entry->getCreatedAt()->getTimestamp())) }}</p>
+            <p class="subtitle">{{ ucwords(strftime('%d %B %G', $entry->getCreatedAt()->getTimestamp())) }}</p>
           </div>
           <div class="level-right">
             <span class="tag">{{ ucfirst($entry->getCategory()) }}</span>
