@@ -36,8 +36,19 @@ class LabsController extends ContentfulController
     if($items){
        $entry = $items[0];
        $html = htmlspecialchars_decode(strval($entry->getHtml()),ENT_HTML5);
-       $html = str_replace("</head>", "<style>".$entry->getCss()."</style></head>", $entry->getHtml());
-       $html = str_replace("</body>", "<script src='".$entry->getBundle()->getFile()->getUrl()."'></script></body>", $entry->getHtml());
+
+       if ($entry->getBundlecss() === NULL) {
+        $html = str_replace("</head>", "<style>".$entry->getCss()."</style></head>", $html);
+       } else {
+        $html = str_replace("</head>", "<link href='".$entry->getBundlecss()->getFile()->getUrl()."' rel='stylesheet' type='text/css' /></head>", $html);
+       }
+
+       if ($entry->getBundle() === NULL) {
+        $html = str_replace("</body>", "<script>".$entry->getJs()."</script></body>", $html);
+       } else {
+        $html = str_replace("</body>", "<script src='".$entry->getBundle()->getFile()->getUrl()."'></script></body>", $html);
+       }
+
        header('Content-Type: text/html; charset=utf-8');
        return $html;
     }else{

@@ -5,10 +5,18 @@
     <div class="column is-narrow"><a href="/labo"><i class="ld ld-arrow-left"></i> Retour</a></div>
     <div class="column has-text-centered content"><h1>{{ $entry->getTitle() }}</h1></div>
     <div class="column is-narrow has-text-right has-text-centered-mobile">
+      @if($entry->getGithub() !== NULL)
       <a class="button is-rounded has-icon" target="_blank" href="{{ $entry->getGithub() }}">
         <i class="ld ld-github"></i>
         View on Github
       </a>
+      @endif
+      @if($entry->getCodepen() !== NULL)
+      <a class="button is-rounded has-icon" target="_blank" href="{{ $entry->getCodepen() }}">
+        <i class="ld ld-codepen"></i>
+        View on Codepen
+      </a>
+      @endif
     </div>
   </div>
   <div class="columns">
@@ -67,6 +75,15 @@
   hljs.initHighlightingOnLoad()
   hljs.initLineNumbersOnLoad()
 </script>
+
+@if($entry->getLarge())
+<script>
+window.addEventListener("load", function(event) {
+  console.log('test');
+  setTimeout(document.querySelector('.ld-layout-h').click(), 1000);
+});
+</script>
+@endif
 @endpush
 
 @push("styles")
