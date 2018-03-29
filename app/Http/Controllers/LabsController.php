@@ -11,7 +11,15 @@ class LabsController extends ContentfulController
 
     $entries = $this->client->getEntries($this->query);
     setlocale (LC_TIME, "fr_FR.utf8");
-    return view("pages.labo")->with("entries", $entries);
+    $categories = array();
+    foreach ($entries->getItems() as $entry) {
+      if (isset($categories[$entry->getCategory()])) {
+        array_push($categories[$entry->getCategory()], $entry);
+      } else {
+        $categories[$entry->getCategory()] = [$entry];
+      }
+    }
+    return view("pages.labo")->with("entries", $entries)->with("categories", $categories);
   }
 
   public function view($slug)

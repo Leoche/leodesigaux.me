@@ -6,18 +6,19 @@
         <h1>Labo</h1>
       </div>
       <div class="level-right">
-        <a class="toggle" href="#"><i class="ld ld-filter"></i> Filtres</a>
+        <a class="filters-toggle" href="#"><i class="ld ld-filter"></i> Filtres</a>
         <p class="filters">
           <span>:</span>
-          <span class="tag">defe</span>
-          <span class="tag is-info">defe</span>
+          @foreach($categories as $category => $items)
+          <span class="tag" data-target="{{ $category }}">{{ ucfirst($category) }}</span>
+          @endforeach
         </p>
       </div>
     </div>
     <hr>
   <div class="column-grid column-duo">
     @foreach(array_reverse($entries->getItems()) as $entry)
-    <a href="labo/{{ $entry->getSlug() }}" class="card card-lab">
+    <a href="labo/{{ $entry->getSlug() }}" data-filtered="{{ $entry->getCategory() }}" class="card card-lab">
       <div class="card-image">
         <figure class="image is-square">
           <img src="{{ $entry->getImg()->getFile()->getUrl() }}" alt="thumb">

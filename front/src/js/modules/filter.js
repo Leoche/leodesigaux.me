@@ -28,7 +28,7 @@ export default class Filter {
   }
   // UI
   show (name) {
-    document.querySelectorAll("[data-filtered='" + name + "']").forEach($el => { $el.style.display = 'block' })
+    document.querySelectorAll("[data-filtered='" + name + "']").forEach($el => { $el.style.removeProperty('display') })
   }
   hide (name) {
     document.querySelectorAll("[data-filtered='" + name + "']").forEach($el => { $el.style.display = 'none' })

@@ -10,6 +10,14 @@
     }
 }
 
+.filters-toggle {
+    color: $ld-gray;
+
+    &:hover {
+        color: $ld-blue;
+    }
+}
+
 .spacer {
     width: 100%;
     height: 16px;
