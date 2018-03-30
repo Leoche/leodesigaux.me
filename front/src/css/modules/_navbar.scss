@@ -31,6 +31,13 @@
                 &:after {
                     width: 100%;
                     background: $ld-blue;
+                    transition: width 0.5s 0.2s $easeInQuart, background 0.2s;
+                }
+
+                &:before {
+                    transform: translateX(100%);
+                    background: $ld-blue;
+                    transition: transform 0.5s , background 0.2s;
                 }
             }
         }
@@ -40,13 +47,29 @@
             position: relative;
             opacity: .8;
             transition: all .2s;
+            display: inline-block;
+            overflow: hidden;
 
             &:after {
-                content: "";
+                content: '';
                 display: block;
                 height: 1px;
                 width: 0%;
-                transition: all 0.2s $easeInQuart;
+                transition: width 0.5s , background 0.2s;
+                background: #333;
+                margin-top: 3px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            &:before {
+                content: "";
+                display: block;
+                height: 1px;
+                width: 100%;
+                transform: translateX(-101%);
+                transition: transform 0.5s 0.2s $easeInQuart, background 0.2s;
                 background: #333;
                 margin-top: 3px;
                 position: absolute;
@@ -71,7 +94,7 @@
             & span {
                 color: #fff;
 
-                &:after {
+                &:after, &:before {
                     background: #ccc;
                 }
 
@@ -153,7 +176,7 @@
             font-size: 28px;
 
             & span {
-                &:after {
+                &:after, &:before {
                     height: 2px;
                     background: $ld-blue;
                 }
