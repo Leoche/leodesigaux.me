@@ -29,20 +29,21 @@ var Catlife = {
 		Catlife.keys.up=false;Catlife.keys.down=false;Catlife.keys.left=false;Catlife.keys.right=false;Catlife.keys.space=false;
 	},
 	imagesRegister:function(){
-		Catlife.imgs.cat = document.getElementById("image-cat"); 
-		Catlife.imgs.roads = document.getElementById("image-roads"); 
-		Catlife.imgs.sky = document.getElementById("image-sky"); 
-		Catlife.imgs.maison = document.getElementById("image-maison"); 
+		Catlife.imgs.cat = document.getElementById("image-cat");
+		Catlife.imgs.roads = document.getElementById("image-roads");
+		Catlife.imgs.sky = document.getElementById("image-sky");
+		Catlife.imgs.maison = document.getElementById("image-maison");
 		Catlife.imgs.garage = document.getElementById("image-garage");
-		Catlife.imgs.murs = document.getElementById("image-murs"); 
-		Catlife.imgs.voitures = document.getElementById("image-voitures"); 
-		Catlife.imgs.motos = document.getElementById("image-motos"); 
-		Catlife.imgs.buildings = document.getElementById("image-buildings"); 
-		Catlife.imgs.gameover = document.getElementById("image-gameover"); 
-		Catlife.imgs.logo = document.getElementById("image-logo"); 
+		Catlife.imgs.murs = document.getElementById("image-murs");
+		Catlife.imgs.voitures = document.getElementById("image-voitures");
+		Catlife.imgs.motos = document.getElementById("image-motos");
+		Catlife.imgs.buildings = document.getElementById("image-buildings");
+		Catlife.imgs.gameover = document.getElementById("image-gameover");
+		Catlife.imgs.logo = document.getElementById("image-logo");
 	},
 	controlsRegister:function(c){
 		window.onkeydown=function(e){
+      e.preventDefault();
 			if(!Catlife.ingame||Catlife.cat.dead){
 				if(e.keyCode==32){
 					Catlife.play();
@@ -372,7 +373,7 @@ var Catlife = {
 		if(this.building == 1){
 			if(Catlife.map.chunks[(Catlife.map.max-1)]!=undefined&&(Catlife.map.max!=0&&Catlife.map.chunks[(Catlife.map.max-1)].building != 1)) this.buildingData = new Catlife.generateGarage();
 			else{ this.buildingData = new Catlife.generateHouse(); this.building = 0;}
-		} 
+		}
 		if(Catlife.map.chunks[(Catlife.map.max-1)]!=undefined&&Catlife.map.max!=0&&Catlife.map.chunks[(Catlife.map.max-1)].building == 1){ this.buildingData = new Catlife.generateHouse(); this.building = 0;}
 		if(Math.floor(Math.random()*7)==1){ this.buildingData = new Catlife.generateBuilding(); this.building = 2;}
 	},

@@ -33,7 +33,7 @@ var $ = {
 		{range:20},
 		{tripeon:5},
 		{tripeon:5,range:4},//15
-		{tripeon:5,hardrange:4}, 
+		{tripeon:5,hardrange:4},
 		{tripeon:5,tritripeon:2,movingrange:4},
 		{tritripeon:5,movingrange:4},
 		{tritripeon:10,movingrange:4,doublemovingrange:2},
@@ -61,7 +61,6 @@ var $ = {
 		$.w = $.canvas.width; $.h = $.canvas.height;
 		$.ctx = $.canvas.getContext("2d");
 		$.ctx.font = '24px "Somy"';
-		$.ctx.shadowBlur = 10;
 		$.controlsRegister();
 		$.imagesRegister();
 		$.soundsRegister();
@@ -69,7 +68,8 @@ var $ = {
 		$.update();
 	},
 	initMenu:function(){
-		$.tick = 0;
+    $.tick = 0;
+		$.wave = 0;
 		$.state = "menu";
 		$.vars.buttons=[
 				{
@@ -97,6 +97,8 @@ var $ = {
 		$.vars.buttonsIndex=0;;
 	},
 	initGame:function(){
+    $.ennemiesLife=0;
+    $.ennemiesLeft=0;
 		$.tick = 0;
 		$.P={shieldrad:0,shield:0,x:500,y:400,enemyspeed:1,r:20,god:0,rateTick:30,rate:30,vx:0,rad:0,vy:0,life:60,lifeMax:60,luck:0.9,stamina:5,staminaMax:5,speed:3,shot:1,shotr:2,shots:2,color:"rgba(255,255,255,.8)",
 		heal:function(c){this.life+=c;if(this.life>this.lifeMax)this.life=this.lifeMax;},
@@ -242,23 +244,23 @@ var $ = {
 		$.tick = 0;
 	},
 	imagesRegister:function(){
-		$.imgs.background = document.getElementById("image-background"); 
-		$.imgs.cursor = document.getElementById("image-cursor"); 
-		$.imgs.leoche = document.getElementById("image-leoche"); 
-		$.imgs.power = document.getElementById("image-power"); 
-		$.imgs.powers = document.getElementById("image-powers"); 
+		$.imgs.background = document.getElementById("image-background");
+		$.imgs.cursor = document.getElementById("image-cursor");
+		$.imgs.leoche = document.getElementById("image-leoche");
+		$.imgs.power = document.getElementById("image-power");
+		$.imgs.powers = document.getElementById("image-powers");
 	},
 	soundsRegister:function(){
-		$.sounds.die = document.getElementById("sound-die"); 
-		$.sounds.hurt = document.getElementById("sound-hurt"); 
-		$.sounds.pickup = document.getElementById("sound-pickup"); 
-		$.sounds.quad = document.getElementById("sound-quad"); 
+		$.sounds.die = document.getElementById("sound-die");
+		$.sounds.hurt = document.getElementById("sound-hurt");
+		$.sounds.pickup = document.getElementById("sound-pickup");
+		$.sounds.quad = document.getElementById("sound-quad");
 		$.sounds.select = document.getElementById("sound-select");
-		$.sounds.shoot = document.getElementById("sound-shoot"); 
-		$.sounds.shoot2 = document.getElementById("sound-shoot2"); 
-		$.sounds.wave = document.getElementById("sound-wave"); 
-		$.sounds.select2 = document.getElementById("sound-select2"); 
-		$.sounds.split = document.getElementById("sound-split"); 
+		$.sounds.shoot = document.getElementById("sound-shoot");
+		$.sounds.shoot2 = document.getElementById("sound-shoot2");
+		$.sounds.wave = document.getElementById("sound-wave");
+		$.sounds.select2 = document.getElementById("sound-select2");
+		$.sounds.split = document.getElementById("sound-split");
 	},
 	initStats:function(){
 
@@ -513,7 +515,7 @@ var $ = {
 				$.play("pickup");
 				$.map.drops.splice(d,1);
 			}
-				
+
 		}
 		$.updatePlayer();
 		$.updateAI();
@@ -555,17 +557,18 @@ var $ = {
 	},
 	render:function(){
 		$.ctx.globalCompositeOperation = "source-over";
+    $.ctx.shadowBlur = 0;
 		$.ctx.clearRect(0,0,$.w,$.h);
-		$.ctx.fillStyle = "black";
+		$.ctx.fillStyle = "rgba(0,15,0,1)";
 		$.ctx.fillRect(0,0,$.w,$.h);
-		$.changeColor("rgba(0,100,50,1)");
+		$.changeColor("rgba(0,155,0,1)");
 		//$.ctx.shadowOffsetY = 1000;
 		//$.ctx.shadowBlur = 1000;
 		//$.circle($.w/2,$.h/2-1000,100);
-		$.ctx.shadowBlur = 10;
-		$.ctx.shadowOffsetY = 0;
 		$.ctx.fillStyle=$.ctx.createPattern($.imgs.background,"repeat");
 		$.ctx.fillRect(0,0,$.w,$.h);
+    $.ctx.shadowBlur = 10;
+    $.ctx.shadowOffsetY = 0;
 		if($.state == "game"){
 			$.tick+=.05;
 			if($.tick>1) $.tick = 0;
@@ -806,7 +809,7 @@ var $ = {
 		this.render = function(){$.changeColor("#FFFFFF"); this.back();};
 		switch(type){
 			case "halfheart":
-			this.render = function(){ 
+			this.render = function(){
 				$.changeColor("#e9270d"); this.back();
 				$.ctx.drawImage($.imgs.powers,200,0,20,20,-10+$.w/2+$.map.scroll.x+this.x,-10+$.h/2+$.map.scroll.y+this.y,20,20);
 				this.next();
@@ -816,7 +819,7 @@ var $ = {
 			}
 			break;
 			case "stam":
-			this.render = function(){ 
+			this.render = function(){
 				$.changeColor("#1157c0"); this.back();
 				$.ctx.drawImage($.imgs.powers,220,0,20,20,-10+$.w/2+$.map.scroll.x+this.x,-10+$.h/2+$.map.scroll.y+this.y,20,20);
 				this.next();
@@ -826,7 +829,7 @@ var $ = {
 			}
 			break;
 			case "power":
-			this.render = function(){ 
+			this.render = function(){
 				$.changeColor("#fff");
 				this.back();
 				$.ctx.save();
@@ -986,7 +989,7 @@ var $ = {
 							$.play("die");
 							$.E[i].die();
 							$.ennemiesLifeLeft += Math.abs($.E[i].life);
-							if(Math.random()>$.P.luck) 
+							if(Math.random()>$.P.luck)
 								if(Math.random()>.5)
 									$.map.drops.push(new $.Item($.E[i].x,$.E[i].y,10,"halfheart"));
 								else
@@ -1557,12 +1560,12 @@ var $ = {
 			i.x=i.r;
 			if(mine) $.map.scroll.x = -i.x;
 			i.vx*=-1;
-		}		
+		}
 		if(i.y-i.r<0){
 			i.y=i.r;
 			if(mine) $.map.scroll.y = -i.y;
 			i.vy*=-1;
-		}	
+		}
 		if(i.y+i.r>$.map.h){
 			i.y=$.map.h-i.r;
 			if(mine) $.map.scroll.y = -i.y;
@@ -1578,7 +1581,7 @@ var $ = {
 	changeColor:function(c){
 		$.ctx.fillStyle = c;
 		$.ctx.shadowColor = c;
-	},	
+	},
 	circle:function(x,y,r){
 		$.ctx.beginPath();
 		$.ctx.arc(x,y,r,0,Math.PI*2,true);

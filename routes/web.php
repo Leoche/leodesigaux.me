@@ -18,10 +18,12 @@ $router->get('/realisations', "WorksController@index");
 
 $router->get('/labo', "LabsController@index");
 $router->get('/labo/{slug:[a-z\-]+}', "LabsController@view");
-$router->get('/labo/iframe/{slug:[a-z\-]+}', "LabsController@iframe");
+$router->get('/labo/iframe/{slug:[a-z0-9\-]+}', "LabsController@iframe");
 
 $router->get('/blog', "BlogController@index");
-$router->get('/blog/{slug:[a-z\-]+}', "BlogController@view");
+$router->get('/blog/{slug:[a-z0-9\-]+}', "BlogController@view");
+
+$router->get('/ludumdare/{edition:[0-9]+}', "SandboxController@ludumdare");
 
 $router->get('/contact', function () use ($router) {
     return view('pages.contact');
